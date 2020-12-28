@@ -11,7 +11,7 @@ import GoogleMapMarkersPrerender from './google_map_markers_prerender';
 import { generateHeatmap, optionsHeatmap } from './google_heatmap';
 
 // loaders
-import googleMapLoader from './loaders/google_map_loader';
+//import googleMapLoader from './loaders/google_map_loader';
 
 // utils
 import Geo from './utils/geo';
@@ -131,7 +131,7 @@ export default class GoogleMap extends Component {
     hoverDistance: PropTypes.number,
     debounced: PropTypes.bool,
     margin: PropTypes.array,
-    googleMapLoader: PropTypes.any,
+    //googleMapLoader: PropTypes.any,
     onGoogleApiLoaded: PropTypes.func,
     yesIWantToUseGoogleMapApiInternals: PropTypes.bool,
     draggable: PropTypes.bool,
@@ -151,7 +151,7 @@ export default class GoogleMap extends Component {
     hoverDistance: 30,
     debounced: true,
     options: defaultOptions_,
-    googleMapLoader,
+    //googleMapLoader,
     yesIWantToUseGoogleMapApiInternals: false,
     style: {
       width: '100%',
@@ -166,7 +166,7 @@ export default class GoogleMap extends Component {
     shouldUnregisterMapOnUnmount: true,
   };
 
-  static googleMapLoader = googleMapLoader; // eslint-disable-line
+  //static googleMapLoader = googleMapLoader; // eslint-disable-line
 
   constructor(props) {
     super(props);
@@ -275,7 +275,7 @@ export default class GoogleMap extends Component {
       ...this.props.bootstrapURLKeys,
     };
 
-    this.props.googleMapLoader(bootstrapURLKeys, this.props.heatmapLibrary); // we can start load immediatly
+    //this.props.googleMapLoader(bootstrapURLKeys, this.props.heatmapLibrary); // we can start load immediatly
 
     setTimeout(
       () => {
@@ -541,7 +541,7 @@ export default class GoogleMap extends Component {
     };
 
     this.props
-      .googleMapLoader(bootstrapURLKeys, this.props.heatmapLibrary)
+      //.googleMapLoader(bootstrapURLKeys, this.props.heatmapLibrary)
       .then(maps => {
         if (!this.mounted_) {
           return;
